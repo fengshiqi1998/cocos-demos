@@ -12,7 +12,9 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        ballNode: cc.Node
+        ballNode: cc.Node,
+        blockPrefab: cc.Prefab,
+        blockAreaNode: cc.Node
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -21,28 +23,74 @@ cc.Class({
         this.initPhysics();
 
         this.node.on('touchstart', this.boost, this); // 给小球加速（boost推动）
+
+        this.gameStart = 0;
+
+        this.initBlock();
+
     },
 
     onDestroy() {
         this.node.off('touchstart', this.boost, this);
     },
 
+    // 初始化跳板
+    initBlock() {
+        this.lastBlockPosX = this.ballNode.x; // 最后一个方块的x坐标
+        this.blockNodeArr = [];
+        for(let i=0;i<10;i++) {
+            let blockNode = cc.instantiate(this.blockPrefab);
+            blockNode.x = this.lastBlockPosX;
+            blockNode.y = 0;
+            this.blockAreaNode.addChild(blockNode);
+            this.blockNodeArr.push(blockNode);
+
+            this.lastBlockPosX += 200;
+        }
+    },
+
     // 初始化物理引擎
     initPhysics() {
         let manager = cc.director.getPhysicsManager();
         manager.enabled = true;
-        manager.gravity = cc.v2(0, -2400);
+        manager.gravity = cc.v2(0, -1600);
     },
 
     // 加速
     boost() {
-        let rigidbody = this.ballNode.getComponent(cc.RigidBody);
-        rigidbody.linearVelocity = cc.v2(0, -1200); // 给刚体设置线性速度
+        if (this.ballNode.getComponent('ball').initVel) {
+            let rigidbody = this.ballNode.getComponent(cc.RigidBody);
+            rigidbody.linearVelocity = cc.v2(0, -1200); // 给刚体设置线性速度
+            this.gameStart = 1;
+        }
+    },
+
+    getLastBlockPosX() {
+        let posX = 0;
+        for (let blockNode of this.blockNodeArr) {
+            posX = blockNode.x;
+        }
+        return posX;
     },
 
     start () {
 
     },
 
-    // update (dt) {},
+    update (dt) {
+        if (this.gameStart) {
+            let speed = -450 * dt;
+            for (let blockNode of this.blockNodeArr) {
+                blockNode.x += speed;
+
+                if (blockNode.x < -cc.winSize.width / 2 - blockNode.width / 2) {
+                    blockNode.x = this.getLastBlockPosX += 200;
+                }
+            }
+        }
+        if (this.ballNode.y < -cc.winSize.height/2) {
+            console.log('game over');
+            cc.director.loadScene('game');
+        }
+    },
 });
