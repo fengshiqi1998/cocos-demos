@@ -14,7 +14,8 @@ cc.Class({
     properties: {
         ballNode: cc.Node,
         blockPrefab: cc.Prefab,
-        blockAreaNode: cc.Node
+        blockAreaNode: cc.Node,
+        scoreLabel: cc.Label
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -24,6 +25,8 @@ cc.Class({
 
         this.node.on('touchstart', this.boost, this); // 给小球加速（boost推动）
 
+        this.isLoad = true;
+        this.score = 0;
         this.gameStart = 0;
 
         this.initBlock();
@@ -38,10 +41,14 @@ cc.Class({
     initBlock() {
         this.lastBlockPosX = this.ballNode.x; // 最后一个方块的x坐标
         this.blockNodeArr = [];
-        for(let i=0;i<10;i++) {
+        for(let i=0;i<7;i++) {
             let blockNode = cc.instantiate(this.blockPrefab);
             blockNode.x = this.lastBlockPosX;
             blockNode.y = 0;
+
+            let width = 80 + (Math.random() > 0.5 ? 1: -1) * (40 * Math.random());
+            blockNode.getComponent('block').init(width);
+
             this.blockAreaNode.addChild(blockNode);
             this.blockNodeArr.push(blockNode);
 
@@ -65,10 +72,19 @@ cc.Class({
         }
     },
 
+    // 刷新得分
+    incrScore(incr) {
+        this.score += incr;
+        this.scoreLabel.string = this.score;
+    },
+
+    // 获取最后一块跳板的位置
     getLastBlockPosX() {
         let posX = 0;
         for (let blockNode of this.blockNodeArr) {
-            posX = blockNode.x;
+            if (blockNode.x > posX) {
+                posX = blockNode.x;
+            }
         }
         return posX;
     },
@@ -79,18 +95,23 @@ cc.Class({
 
     update (dt) {
         if (this.gameStart) {
-            let speed = -450 * dt;
+            let speed = -350 * dt;
             for (let blockNode of this.blockNodeArr) {
                 blockNode.x += speed;
 
                 if (blockNode.x < -cc.winSize.width / 2 - blockNode.width / 2) {
-                    blockNode.x = this.getLastBlockPosX += 200;
+                    this.incrScore(1);
+                    blockNode.x = this.getLastBlockPosX() + 200;
                 }
             }
         }
         if (this.ballNode.y < -cc.winSize.height/2) {
             console.log('game over');
-            cc.director.loadScene('game');
+            // loadScene之前先用if条件句判断一下之前是否load过
+            if (this.isLoad) {
+                cc.director.loadScene('game');
+                this.isLoad = false;
+            }
         }
     },
 });
