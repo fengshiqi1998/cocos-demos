@@ -21,6 +21,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        cc.game.setFrameRate(30);
         this.initPhysics();
 
         this.node.on('touchstart', this.boost, this); // 给小球加速（boost推动）
@@ -41,7 +42,7 @@ cc.Class({
     initBlock() {
         this.lastBlockPosX = this.ballNode.x; // 最后一个方块的x坐标
         this.blockNodeArr = [];
-        for(let i=0;i<7;i++) {
+        for(let i=0;i<5;i++) {
             let blockNode = cc.instantiate(this.blockPrefab);
             blockNode.x = this.lastBlockPosX;
             blockNode.y = 0;
@@ -89,29 +90,34 @@ cc.Class({
         return posX;
     },
 
-    start () {
-
+    gameOver() {
+        // loadScene之前先用if条件句判断一下之前是否load过
+        if (this.isLoad) {
+            // this.ballNode.stopAllActions();
+            cc.director.loadScene('game');
+            this.isLoad = false;
+        }
     },
+
+    // start () {},
 
     update (dt) {
         if (this.gameStart) {
-            let speed = -350 * dt;
+            let speed = -450 * dt;
             for (let blockNode of this.blockNodeArr) {
                 blockNode.x += speed;
 
                 if (blockNode.x < -cc.winSize.width / 2 - blockNode.width / 2) {
                     this.incrScore(1);
+                    let width = 80 + (Math.random() > 0.5 ? 1: -1) * (40 * Math.random());
+                    blockNode.getComponent('block').init(width);
                     blockNode.x = this.getLastBlockPosX() + 200;
                 }
             }
         }
         if (this.ballNode.y < -cc.winSize.height/2) {
             console.log('game over');
-            // loadScene之前先用if条件句判断一下之前是否load过
-            if (this.isLoad) {
-                cc.director.loadScene('game');
-                this.isLoad = false;
-            }
+            this.gameOver();
         }
     },
 });
