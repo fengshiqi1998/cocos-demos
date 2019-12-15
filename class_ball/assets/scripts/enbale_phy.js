@@ -14,7 +14,8 @@ cc.Class({
         // ...
         is_debug: false, // 是否显示调试信息;
         // 重力加速度是一个向量, 有方向的,2D, Vec重力加速度的大小;
-        gravity: cc.p(0, -320), // 系统默认的
+        // gravity: cc.p(0, -320), // 系统默认的
+        gravity: cc.v2(0, -320), // 系统默认的
     },
 
     // use this for initialization
