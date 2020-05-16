@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "79a7fbbb-83d7-4fb7-94c5-8a11151cdfc6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "char_192_falco_1.png.merge": {
+      "ver": "1.0.4",
+      "uuid": "522fbd5b-91da-4b68-997e-6308546f92c6",
+      "rawTextureUuid": "79a7fbbb-83d7-4fb7-94c5-8a11151cdfc6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 31,
+      "offsetY": 0.5,
+      "trimX": 230,
+      "trimY": 3,
+      "width": 626,
+      "height": 1017,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

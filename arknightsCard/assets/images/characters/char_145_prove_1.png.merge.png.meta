@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "d5cf264c-fbdb-4d7f-b237-ce96649fec5d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "char_145_prove_1.png.merge": {
+      "ver": "1.0.4",
+      "uuid": "aae71c0e-57b6-403e-80d8-95cf9ae7785e",
+      "rawTextureUuid": "d5cf264c-fbdb-4d7f-b237-ce96649fec5d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 43,
+      "offsetY": -1.5,
+      "trimX": 217,
+      "trimY": 16,
+      "width": 676,
+      "height": 995,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

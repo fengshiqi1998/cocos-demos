@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "d73b8e5a-3da5-4a78-a6b1-55c0afc10235",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "char_171_bldsk_2.png.merge": {
+      "ver": "1.0.4",
+      "uuid": "4dc65659-ac2e-4d9f-a61e-78ffe226c2bf",
+      "rawTextureUuid": "d73b8e5a-3da5-4a78-a6b1-55c0afc10235",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 8.5,
+      "offsetY": 152.5,
+      "trimX": 21,
+      "trimY": 155,
+      "width": 2023,
+      "height": 1433,
+      "rawWidth": 2048,
+      "rawHeight": 2048,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

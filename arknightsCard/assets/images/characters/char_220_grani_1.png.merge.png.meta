@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "92872aa5-3820-49e0-80e9-306c24ed2314",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "char_220_grani_1.png.merge": {
+      "ver": "1.0.4",
+      "uuid": "ee144504-417e-4d61-84e9-68a657c3bb54",
+      "rawTextureUuid": "92872aa5-3820-49e0-80e9-306c24ed2314",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -48.5,
+      "offsetY": -3,
+      "trimX": 92,
+      "trimY": 15,
+      "width": 743,
+      "height": 1000,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

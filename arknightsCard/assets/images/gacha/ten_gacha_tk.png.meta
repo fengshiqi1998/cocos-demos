@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "e0c508a4-a8aa-46b8-8480-5c8c72f2bd3a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "ten_gacha_tk": {
+      "ver": "1.0.4",
+      "uuid": "2fd3a6f0-3ddb-4a49-b564-b6aac599f401",
+      "rawTextureUuid": "e0c508a4-a8aa-46b8-8480-5c8c72f2bd3a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 52,
+      "height": 35,
+      "rawWidth": 52,
+      "rawHeight": 35,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

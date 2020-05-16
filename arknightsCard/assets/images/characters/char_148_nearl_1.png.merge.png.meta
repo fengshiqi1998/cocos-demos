@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "4c3da394-06e8-4fbe-8f7e-3063216f5daf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "char_148_nearl_1.png.merge": {
+      "ver": "1.0.4",
+      "uuid": "728adf85-2aaa-40ea-9b2f-7654e814dfe8",
+      "rawTextureUuid": "4c3da394-06e8-4fbe-8f7e-3063216f5daf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 53.5,
+      "offsetY": -10.5,
+      "trimX": 175,
+      "trimY": 24,
+      "width": 781,
+      "height": 997,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
