@@ -53,6 +53,14 @@ cc.Class({
         Input[e.keyCode] = 0;
     },
 
+    // 碰撞回调
+    onCollisionEnter(other, self) {
+        if (other.node.group === 'smog') {
+            other.node.active = false;
+            other.node.getComponent(cc.TiledTile).gid = 0; // 擦除效果
+        }
+    },
+
     update (dt) {
         if (window.dialog && window.dialog.active) return;
 

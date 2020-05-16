@@ -2,10 +2,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        isDebug: {
-            type: cc.Boolean,
-            default: cc.Boolean.false
-        },
+        isDebug: false,
+        isCollisionDebug: false,
         mapNode: {
             type: cc.Node,
             default: null
@@ -18,10 +16,15 @@ cc.Class({
 
     onLoad () {
         const phy = cc.director.getPhysicsManager();
+        const colli = cc.director.getCollisionManager();
 
         phy.enabled = true;
         phy.debugDrawFlags = this.isDebug;
         phy.gravity = cc.v2(0, 0);
+
+        colli.enabled = true;
+        colli.enabledDebugDraw = this.isCollisionDebug;
+
     },
 
     addWallToTiled(tiledMap) {
@@ -29,6 +32,11 @@ cc.Class({
 
         const wall = tiledMap.getLayer('wall');
         const wallSize = wall.getLayerSize();
+
+        const smog = tiledMap.getLayer('smog');
+        smog.node.active = true;
+
+
         for (let i=0;i<wallSize.width;i++) {
             for (let j=0;j<wallSize.height;j++) {
                 let tiled = wall.getTiledTileAt(i, j, true);
@@ -42,6 +50,14 @@ cc.Class({
                     collider.offset = cc.v2(tiledSize.width / 2, tiledSize.height / 2);// 偏移量
                     collider.size = tiledSize;
                     collider.apply();
+                }
+
+                tiled = smog.getTiledTileAt(i, j, true);
+                if (tiled.gid !== 0) {
+                    tiled.node.group = 'smog';
+                    let collider = tiled.node.addComponent(cc.BoxCollider);
+                    collider.offset = cc.v2(tiledSize.width / 2, tiledSize.height / 2);// 偏移量
+                    collider.size = tiledSize;
                 }
             }
         }
