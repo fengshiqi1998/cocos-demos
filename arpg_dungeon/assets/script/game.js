@@ -11,6 +11,10 @@ cc.Class({
         dialogNode: {
             type: cc.Node,
             default: null
+        },
+        loadNode: {
+            type: cc.Node,
+            default: null
         }
     },
 
@@ -25,9 +29,48 @@ cc.Class({
         colli.enabled = true;
         colli.enabledDebugDraw = this.isCollisionDebug;
 
+        let mapNameArr = [
+            ['00000', '01000', '00000'],
+            ['00010', '11110', '00100'],
+            ['00000', '10000', '00000']
+        ];
+
+        this.loadNode.active = true;
+
+        this.initMapArr(mapNameArr);
+
     },
 
-    addWallToTiled(tiledMap) {
+    initMapArr(mapNameArr) {
+        let mapSt = null;
+        let loadCnt = 0;
+        for (let i=0;i<mapNameArr.length;i++) {
+            for (let j=0;j<mapNameArr[i].length;j++) {
+                let mapName = mapNameArr[i][j];
+                if (!mapName || mapName === '00000') continue;
+                if (!mapSt) mapSt = { i, j };
+                loadCnt++;
+
+                cc.loader.loadRes(`map/${mapName}`, cc.TiledMapAsset, (err, asset) => {
+                    let node = new cc.Node();
+                    let map = node.addComponent(cc.TiledMap);
+                    node.anchorX = node.anchorY = 0;
+                    node.x = (j - mapSt.j) * 384;
+                    node.y = -(i - mapSt.i) * 384;
+
+                    map.tmxAsset = asset;
+                    node.parent = this.mapNode;
+                    this.initMapNode(node);
+                    if (--loadCnt === 0) {
+                        this.loadNode.active = false;
+                    }
+                });
+            }
+        }
+    },
+
+    initMapNode(mapNode) {
+        let tiledMap = mapNode.getComponent(cc.TiledMap);
         let tiledSize = tiledMap.getTileSize();
 
         const wall = tiledMap.getLayer('wall');
@@ -51,7 +94,7 @@ cc.Class({
                     collider.size = tiledSize;
                     collider.apply();
                 }
-
+                // 添加迷雾
                 tiled = smog.getTiledTileAt(i, j, true);
                 if (tiled.gid !== 0) {
                     tiled.node.group = 'smog';
@@ -64,10 +107,6 @@ cc.Class({
     },
 
     start () {
-        for (let mapNode of this.mapNode.children) {
-            let tiledMap = mapNode.getComponent(cc.TiledMap);
-            this.addWallToTiled(tiledMap);
-        }
         // this.dialog = this.dialogNode.getComponent('dialog');
         // this.dialog.init([
         //     { role: 2, content: '...............' },

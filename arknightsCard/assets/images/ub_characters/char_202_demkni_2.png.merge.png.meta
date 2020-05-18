@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "c6983872-4385-4672-8c4f-588ce4376dbc",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 2048,
+  "height": 2048,
   "platformSettings": {},
   "subMetas": {
     "char_202_demkni_2.png.merge": {

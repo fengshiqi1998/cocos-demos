@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "92872aa5-3820-49e0-80e9-306c24ed2314",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 1024,
+  "height": 1024,
   "platformSettings": {},
   "subMetas": {
     "char_220_grani_1.png.merge": {

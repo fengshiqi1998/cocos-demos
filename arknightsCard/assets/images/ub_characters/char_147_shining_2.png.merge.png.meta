@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "d9ce2c91-67a8-4732-b5a4-f456d8b71d65",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 2048,
+  "height": 2048,
   "platformSettings": {},
   "subMetas": {
     "char_147_shining_2.png.merge": {

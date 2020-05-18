@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "54217764-36ad-4dce-9ef5-d24bb1618add",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 2048,
+  "height": 2048,
   "platformSettings": {},
   "subMetas": {
     "char_172_svrash_2.png.merge": {

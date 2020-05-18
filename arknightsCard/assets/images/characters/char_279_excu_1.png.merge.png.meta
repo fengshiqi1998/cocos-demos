@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "e5394a22-1dae-4f96-910a-28e3b946f836",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 1024,
+  "height": 1024,
   "platformSettings": {},
   "subMetas": {
     "char_279_excu_1.png.merge": {

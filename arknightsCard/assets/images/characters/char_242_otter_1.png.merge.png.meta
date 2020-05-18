@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "a7efa5c5-e885-4d00-b0d4-182a3cedfb63",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 1024,
+  "height": 1024,
   "platformSettings": {},
   "subMetas": {
     "char_242_otter_1.png.merge": {

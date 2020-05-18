@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "f4c40bff-9b0d-4201-8034-93d18950f5ca",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 1024,
+  "height": 1024,
   "platformSettings": {},
   "subMetas": {
     "char_241_panda_1.png.merge": {

@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "d73b8e5a-3da5-4a78-a6b1-55c0afc10235",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 2048,
+  "height": 2048,
   "platformSettings": {},
   "subMetas": {
     "char_171_bldsk_2.png.merge": {

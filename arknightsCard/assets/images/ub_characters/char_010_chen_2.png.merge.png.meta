@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "dcc96ecb-951f-4ce9-b250-f9c388a1ccc0",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 2048,
+  "height": 2048,
   "platformSettings": {},
   "subMetas": {
     "char_010_chen_2.png.merge": {

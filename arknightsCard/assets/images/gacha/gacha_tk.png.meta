@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "b1ab9836-18c6-496e-8017-22c985c34e66",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 54,
+  "height": 33,
   "platformSettings": {},
   "subMetas": {
     "gacha_tk": {

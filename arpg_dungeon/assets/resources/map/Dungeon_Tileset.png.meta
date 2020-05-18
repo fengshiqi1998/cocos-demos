@@ -1,6 +1,6 @@
 {
   "ver": "2.3.4",
-  "uuid": "6c51a68e-670c-4f05-be32-823b8983e5c9",
+  "uuid": "5f0d7be4-b09a-425e-a5af-6bcde1e9343d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "Dungeon_Tileset": {
       "ver": "1.0.4",
-      "uuid": "010c0597-7b38-4005-b646-8aa0ee511ad5",
-      "rawTextureUuid": "6c51a68e-670c-4f05-be32-823b8983e5c9",
+      "uuid": "9a1f50dc-c62d-424b-817a-d9bb33bd0a61",
+      "rawTextureUuid": "5f0d7be4-b09a-425e-a5af-6bcde1e9343d",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
